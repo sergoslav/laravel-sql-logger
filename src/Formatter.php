@@ -43,6 +43,7 @@ class Formatter
     public function getLine(SqlQuery $query)
     {
         $replace = [
+            '[connection_name]' => $query->connectionName(),
             '[origin]' => $this->originLine(),
             '[query_nr]' => $query->number(),
             '[datetime]' => Carbon::now()->toDateTimeString(),
